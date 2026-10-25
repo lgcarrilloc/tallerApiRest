@@ -32,7 +32,7 @@ public class Conexion {
                     USER,
                     PASSWORD);
 
-            logger.info("Conexión realizada correctamente");
+            logger.info("Conexion realizada");
 
         } catch (ClassNotFoundException e) {
 

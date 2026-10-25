@@ -17,7 +17,6 @@ public class VideojuegoJdbc {
     private static final Logger logger =
             LoggerFactory.getLogger(VideojuegoJdbc.class);
 
-    // INSERTAR
     public Videojuego insertar(Videojuego videojuego) {
 
         Connection con = null;
@@ -71,7 +70,6 @@ public class VideojuegoJdbc {
         return null;
     }
 
-    // LISTAR
     public List<Videojuego> listar() {
 
         List<Videojuego> lista = new ArrayList<>();
@@ -104,6 +102,8 @@ public class VideojuegoJdbc {
                 lista.add(v);
             }
 
+            logger.info("Listado de videojuegos obtenido");
+
         } catch (Exception e) {
 
             logger.error("Error al listar videojuegos", e);
@@ -130,7 +130,6 @@ public class VideojuegoJdbc {
         return lista;
     }
 
-    // BUSCAR POR CODIGO
     public Videojuego buscar(String codigo) {
 
         Connection con = null;
@@ -161,6 +160,8 @@ public class VideojuegoJdbc {
                 v.setDisponible(rs.getBoolean("disponible"));
                 v.setGenero(rs.getString("genero"));
 
+                logger.info("Busqueda de videojuego realizada");
+
                 return v;
             }
 
@@ -190,7 +191,6 @@ public class VideojuegoJdbc {
         return null;
     }
 
-    // ACTUALIZAR
     public Videojuego actualizar(Videojuego videojuego) {
 
         Connection con = null;
@@ -227,7 +227,7 @@ public class VideojuegoJdbc {
 
         } catch (Exception e) {
 
-            logger.error("Error al actualizar videojuego", e);
+            logger.error("Error al actualizar", e);
 
         } finally {
 
@@ -248,7 +248,6 @@ public class VideojuegoJdbc {
         return null;
     }
 
-    // ELIMINAR
     public boolean eliminar(String codigo) {
 
         Connection con = null;
@@ -273,7 +272,7 @@ public class VideojuegoJdbc {
 
         } catch (Exception e) {
 
-            logger.error("Error al eliminar videojuego", e);
+            logger.error("Error al eliminar", e);
 
         } finally {
 

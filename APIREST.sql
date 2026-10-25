@@ -1,4 +1,4 @@
-CREATE DATABASE apijdbc;
+SELECT current_database();
 
 CREATE TABLE videojuegos(
     codigo VARCHAR(10) PRIMARY KEY,
